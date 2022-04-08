@@ -1,0 +1,83 @@
+{% extends 'radio/index.html' %} {%block content%}
+
+<h3>=Upload list=</h3>
+
+
+<style>
+
+    li{
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    li img{
+    width: 30%
+    }
+
+</style>
+
+<h2>list of utils</h2>
+
+<a href="/startReader"><p>startReader</p></a>
+<a href="/readyStream"><p>readyStream</p></a>
+
+<p>=end of utils=</p>
+
+<h3>passed messages</h3>
+<ul>
+    {% for i in passedMessages %}
+    <li>
+        <p>{{i.message}}</p>
+        <img src="{{i.image}}">
+        <a href="/deleteMessage/{{i.id}}"><button>delete</button></a>       
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>unpassed messages</h3>
+<ul>
+    {% for i in unpassedMessages %}
+    <li>
+        <p>{{i.message}}</p>
+        <img src="{{i.image}}">
+        <a href="/passMessage/{{i.id}}"><button>pass</button></a>                
+        <a href="/deleteMessage/{{i.id}}"><button>delete</button></a>       
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>passed audio</h3>
+<ul>
+    {% for i in passedAudio %}
+    <li>
+        <p>{{i.name}}</p>
+        <p>{{i.artist}}</p>
+        <p>{{i.find_on}}</p>
+        <p>{{i.isMusic}}</p>
+        <a href="/deleteAudio/{{i.id}}"><button>delete</button></a>
+
+        <audio controls>
+          <source src="{{i.file}}" type="audio/ogg">
+        </audio>
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>unpassed audio</h3>
+<ul>
+    {% for i in unpassedAudio %}
+    <li>
+        <p>{{i.name}}</p>
+        <p>{{i.artist}}</p>
+        <p>{{i.find_on}}</p>
+        <p>{{i.isMusic}}</p>
+        <a href="/passAudio/{{i.id}}"><button>pass</button></a>                
+        <a href="/deleteAudio/{{i.id}}"><button>delete</button></a>
+
+        <audio controls>
+          <source src="{{i.file}}" type="audio/ogg">
+        </audio>
+    </li>
+    {% endfor %}
+</ul>
+{%endblock%}

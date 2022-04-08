@@ -1,0 +1,48 @@
+{% load static%}
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<title>Radio</title>
+
+    <link rel="stylesheet" href="{% static 'standard.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png" />
+
+</head>
+
+<body>
+
+
+	
+		<div id="topbanner" class="svelte-1i23jxw"><img src="/static/avatar.jpg" class="svelte-1i23jxw">
+	
+		</div>
+		<div id="optionbar" class="svelte-1i23jxw">
+
+		</div>
+	</div>
+	<div id="profileBlockBottom" class="svelte-1i23jxw">
+		<div>
+			<a href="/"><button class="svelte-1i23jxw">index</button></a>
+			<a href="/radio"><button class="svelte-1i23jxw">radio</button></a>
+			<a href="/listAll"><button class="svelte-1i23jxw">song panel</button></a>
+			<a href="/uploadAudio"><button class="svelte-1i23jxw">upload song</button></a>
+
+		</div>
+
+        {% block content %}
+        {% endblock %}
+
+	</div>
+
+	<br>
+	
+
+</body>
+
+</html>
+

@@ -1,0 +1,48 @@
+{% extends 'radio/index.html' %} {%block content%} {% load static%}
+
+
+<style>
+
+#playerMenu{
+  box-shadow: 0px 0px 8px black;
+  padding: 5px;
+
+}
+
+
+</style>
+
+<h1>Radio</h1>
+
+<div id="playerMenu">
+
+  <button id="playTap" onclick="playRadio()">play radio</button>
+  <small>| |</small>
+  <small>Currently playing:</small>
+  <small id="songNameOuput">Currently none</small>
+  <small>|</small>
+  <a href="" id="artistButton"><small>Find currently playing artist</small></a>
+
+  <ul>
+    <h3>Up next -></h3>
+    <li id="nextLi"></li>
+    <li id="secondNextLi"></li>
+  </ul>
+
+</div>
+
+<audio controls id="radiostream" style="display: none;">
+  <source src="/stream/" type="audio/ogg">
+</audio>
+
+<h3>I want to listen to this radio in media player, with noscript, etc</h3>
+<a href="/stream/" style="text-decoration: underline">treat yourself with this direct
+  stream</a>
+
+<script src="{% static 'scripts/radio.js' %}"></script>
+
+
+{%endblock%}
+
+
+
